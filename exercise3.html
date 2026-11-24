@@ -7,9 +7,14 @@
     <style>
       body {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      #circle-container {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
         gap: 15px;
       }
       .box {
@@ -39,8 +44,6 @@
         let para = document.createElement("div");
         para.classList.add("box");
         para.style.backgroundColor = `rgb(${r},${g},${b})`;
-
-        document.body.appendChild(para);
         container.appendChild(para);
       });
     </script>
