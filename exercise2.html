@@ -1,1 +1,56 @@
-   <!-- Write your code here -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      #box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 18%;
+        background-color: rgb(255, 100, 100);
+        font-weight: bold;
+        color: white;
+        font-size: 30px;
+      }
+      #btn {
+        width: 120px;
+        height: 50px;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Add box</button>
+    <div id="box-container"></div>
+    <script>
+      let btn = document.getElementById("btn");
+      let container = document.getElementById("box-container");
+      let count = 0;
+      btn.addEventListener("click", () => {
+        count++;
+        let para = document.createElement("div");
+        para.classList.add("box");
+        para.textContent = count;
+
+        container.appendChild(para);
+      });
+    </script>
+  </body>
+</html>
