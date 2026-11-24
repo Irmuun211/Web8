@@ -1,1 +1,48 @@
-   <!-- Write your code here -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border-radius: 100%;
+      }
+      #btn {
+        width: 120px;
+        height: 50px;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Add circle</button>
+    <div id="circle-container"></div>
+    <script>
+      let btn = document.getElementById("btn");
+      let container = document.getElementById("circle-container");
+      btn.addEventListener("click", () => {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        console.log(Math.random());
+        let para = document.createElement("div");
+        para.classList.add("box");
+        para.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+        document.body.appendChild(para);
+        container.appendChild(para);
+      });
+    </script>
+  </body>
+</html>
